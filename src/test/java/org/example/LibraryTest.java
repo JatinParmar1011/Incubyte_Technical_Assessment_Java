@@ -3,6 +3,9 @@ package org.example;
 import org.junit.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.util.List;
+import java.util.Map;
+
 public class LibraryTest {
     Library library = new Library();
 
@@ -65,5 +68,23 @@ public class LibraryTest {
 
         IllegalArgumentException exception4 = assertThrows(IllegalArgumentException.class, () -> library.returnBook(""));
         assertEquals("ISBN cannot be null or empty", exception4.getMessage());
+    }
+
+    @Test
+    public void testViewAvailableBooks() {
+        // Add  Books to the library
+        Book book1 = new Book("9788172234980", "The White Tiger", "Aravind Adiga", 2008);
+        Book book2 = new Book("9780670089130", "The Ministry of Utmost Happiness", "Arundhati Roy", 2017);
+
+        library.addBook(book1);
+        library.addBook(book2);
+
+        // View available books
+        List<Book> availableBooks = library.viewAvailableBooks();
+
+        // Print available books
+        for (Book book : availableBooks) {
+            System.out.println("ISBN: " + book.getISBN() + ", Title: " + book.getTitle() + ", Author: " + book.getAuthor() + ", Year: " + book.getYear());
+        }
     }
 }
