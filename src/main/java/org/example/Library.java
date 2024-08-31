@@ -34,6 +34,10 @@ public class Library
 
         Book book = bookCollection.get(isbn);
 
+        if (book == null) {
+            throw new IllegalArgumentException("Book not found");
+        }
+
         borrowedBooks.remove(isbn);            // Remove from inventory
         borrowedBooks.put(isbn, book);         // Add to borrowed books
     }
