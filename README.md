@@ -79,8 +79,7 @@ Before you begin, ensure that your development environment meets the following r
 2. Run the following command to download the repository:
    
 ```bash
-git clone https://github.com/yourusername/library-management-system.git
-cd library-management-system
+git clone (https://github.com/JatinParmar1011/Incubyte_Technical_Assessment_Java)
 ```
 
 ## Test Coverage
