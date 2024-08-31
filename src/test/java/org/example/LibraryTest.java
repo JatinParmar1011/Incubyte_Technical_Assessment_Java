@@ -40,9 +40,9 @@ public class LibraryTest {
 
         // 4. Attempt to borrow with null or empty ISBNs
         IllegalArgumentException exception3 = assertThrows(IllegalArgumentException.class, () -> library.borrowBook(null));
-        assertEquals("ISBN cannot be null or empty", exception1.getMessage());
+        assertEquals("ISBN cannot be null or empty", exception3.getMessage());
 
         IllegalArgumentException exception4 = assertThrows(IllegalArgumentException.class, () -> library.borrowBook(""));
-        assertEquals("ISBN cannot be null or empty", exception2.getMessage());
+        assertEquals("ISBN cannot be null or empty", exception4.getMessage());
     }
 }

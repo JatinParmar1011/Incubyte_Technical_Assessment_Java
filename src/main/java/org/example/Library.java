@@ -28,6 +28,10 @@ public class Library
     }
 
     public void borrowBook(String isbn) {
+        if (isbn == null || isbn.isEmpty()) {
+            throw new IllegalArgumentException("ISBN cannot be null or empty");
+        }
+
         if (borrowedBooks.containsKey(isbn)) {
             throw new IllegalStateException("Book is already borrowed");
         }
@@ -38,7 +42,7 @@ public class Library
             throw new IllegalArgumentException("Book not found");
         }
 
-        borrowedBooks.remove(isbn);            // Remove from inventory
-        borrowedBooks.put(isbn, book);         // Add to borrowed books
+        borrowedBooks.remove(isbn);
+        borrowedBooks.put(isbn, book);
     }
 }
