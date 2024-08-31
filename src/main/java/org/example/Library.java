@@ -28,6 +28,10 @@ public class Library
     }
 
     public void borrowBook(String isbn) {
+        if (borrowedBooks.containsKey(isbn)) {
+            throw new IllegalStateException("Book is already borrowed");
+        }
+
         Book book = bookCollection.get(isbn);
 
         borrowedBooks.remove(isbn);            // Remove from inventory
