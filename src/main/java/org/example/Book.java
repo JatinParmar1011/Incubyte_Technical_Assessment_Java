@@ -29,4 +29,8 @@ public class Book {
             throw new IllegalArgumentException("Publication year should be a positive integer");
         }
     }
+
+    public String getISBN() {
+        return isbn;
+    }
 }
