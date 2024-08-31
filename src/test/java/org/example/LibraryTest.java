@@ -27,7 +27,11 @@ public class LibraryTest {
         Book book = new Book("9788173711466", "Wings of Fire", "A.P.J. Abdul Kalam", 1999);
         library.addBook(book);
 
-        // Borrowing book here
+        //1. Borrowing book here
         library.borrowBook(book.getISBN());
+
+        // 2.Attempt to borrow the same book again
+        IllegalStateException exception1 = assertThrows(IllegalStateException.class, () -> library.borrowBook(book.getISBN()));
+        assertEquals("Book is already borrowed", exception1.getMessage());
     }
 }

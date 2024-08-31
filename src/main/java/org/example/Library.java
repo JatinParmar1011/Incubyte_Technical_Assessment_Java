@@ -30,7 +30,7 @@ public class Library
     public void borrowBook(String isbn) {
         Book book = bookCollection.get(isbn);
 
-        bookCollection.remove(isbn);            // Remove from inventory
+        borrowedBooks.remove(isbn);            // Remove from inventory
         borrowedBooks.put(isbn, book);         // Add to borrowed books
     }
 }
