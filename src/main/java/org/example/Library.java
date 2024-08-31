@@ -47,6 +47,10 @@ public class Library
     }
 
     public void returnBook(String isbn) {
+        if (isbn == null || isbn.isEmpty()) {
+            throw new IllegalArgumentException("ISBN cannot be null or empty");
+        }
+
         Book book = borrowedBooks.get(isbn);
 
         if (book == null) {
