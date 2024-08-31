@@ -3,7 +3,7 @@ package org.example;
 import org.junit.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-class LibraryTest {
+public class LibraryTest {
     Library library = new Library();
 
     @Test
@@ -15,5 +15,10 @@ class LibraryTest {
         // 2. Test case for adding a null book
         Exception exception = assertThrows(IllegalArgumentException.class, () -> library.addBook(null));
         assertEquals("Book should not be null", exception.getMessage());
+
+        // 3. test case for adding a book with duplicate ISBN
+        Book duplicateBook = new Book("9788173711466", "Another Book", "Another Author", 2024);
+        Exception duplicateException = assertThrows(IllegalStateException.class, () -> library.addBook(duplicateBook));
+        assertEquals("Book with this ISBN already exists in the library", duplicateException.getMessage());
     }
 }
