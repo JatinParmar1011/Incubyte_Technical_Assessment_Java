@@ -17,6 +17,10 @@ public class Library
         }
 
         String isbn = book.getISBN();
+        if (bookCollection.containsKey(isbn)) {
+            throw new IllegalStateException("Book with this ISBN already exists in the library");
+        }
+
         bookCollection.put(isbn, book);
     }
 }
