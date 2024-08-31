@@ -21,4 +21,13 @@ public class LibraryTest {
         Exception duplicateException = assertThrows(IllegalStateException.class, () -> library.addBook(duplicateBook));
         assertEquals("Book with this ISBN already exists in the library", duplicateException.getMessage());
     }
+
+    @Test
+    public void testBorrowBook() {
+        Book book = new Book("9788173711466", "Wings of Fire", "A.P.J. Abdul Kalam", 1999);
+        library.addBook(book);
+
+        // Borrowing book here
+        library.borrowBook(book.getISBN());
+    }
 }
