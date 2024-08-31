@@ -80,7 +80,17 @@ public class LibraryTest {
         library.addBook(book2);
 
         // viewing available book after adding books in library
-        System.out.println("viewing available book after adding books in library");
+        System.out.println("Available book after adding books in library");
+        library.viewAvailableBooks();
+
+        // viewing available book after borrowing one books from library
+        library.borrowBook(book1.getISBN());
+        System.out.println("\nAvailable book after borrowing one book from library");
+        library.viewAvailableBooks();
+
+        // viewing available book after returning borrowed book to library
+        library.returnBook(book1.getISBN());
+        System.out.println("\nAvailable book after returning borrowed book to library  ");
         library.viewAvailableBooks();
     }
 }
