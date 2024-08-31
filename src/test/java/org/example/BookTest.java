@@ -5,9 +5,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class BookTest {
 
-    // Create a Book instance
-    Book wingsOfFire = new Book("9788173711466", "Wings of Fire", "A.P.J. Abdul Kalam", 1999);
-
     // Test to ensure the ISBN is not null
     @Test
     public void validateISBNIsNull() {
